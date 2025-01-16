@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C363F;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2C363F;
+    z-index: -2;
+}
+
+.content {
+    text-align: center;
+    color: #2C363F;
+}
+
+.content-box {
+    background-color: #FFE0DD;
+    padding: 60px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.glowing-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #FFE0DD;
+    border-radius: 50%;
+    animation: glow 4s infinite alternate, move 12s infinite linear;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px 3px #FFE0DD;
+        opacity: 0.8;
+    }
+    100% {
+        box-shadow: 0 0 20px 8px #FFE0DD;
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(150px, -100px);
+    }
+    50% {
+        transform: translate(300px, 0);
+    }
+    75% {
+        transform: translate(150px, 100px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="content">
+        <div class="content-box">
+            <img src="imgs/logi 1.png" alt="Image">
+            <h1>Great Things Are Just Around the Corner!</h1>
+            <p>Our website is under construction, but we’re almost ready 
+                to launch. Don’t miss out!</p>
+        </div>
+    </div>
+
+    <script>
+   
+   document.addEventListener('DOMContentLoaded', () => {
+    const dotCount = 20; // Number of dots
+    for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('glowing-dot');
+        
+        // Set random initial position
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        dot.style.left = `${randomX}px`;
+        dot.style.top = `${randomY}px`;
+        
+        // Set random speed and direction for animation
+        const randomDuration = Math.random() * 4 + 6; // Random duration between 6s to 10s
+        const randomDelay = Math.random() * 2; // Random delay
+        const randomRotation = Math.random() * 360; // Random rotation angle
+        
+        dot.style.animationDuration = `${randomDuration}s`;
+        dot.style.animationDelay = `${randomDelay}s`;
+        dot.style.transform = `rotate(${randomRotation}deg)`; // Adding rotation for variety
+        
+        document.body.appendChild(dot);
+    }
+});
+
+    </script>
+</body>
+</html>
