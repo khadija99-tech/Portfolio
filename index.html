@@ -18,17 +18,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2C363F;
+    background: url('imgs/space.png') no-repeat center center/cover; 
     overflow: hidden;
 }
 
-.bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #2C363F;
-    z-index: -2;
-}
 
 .content {
     text-align: center;
@@ -37,15 +30,17 @@ body {
 
 .content-box {
     background-color: #FFE0DD;
+    width: 600px;
     padding: 60px;
-    border-radius: 10px;
+    border-radius: 30px;
     display: inline-block;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 5px #FFE0DD;
+    animation: float 4s ease-in-out infinite;
 }
 
 .content img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     margin-bottom: 20px;
 }
@@ -96,6 +91,17 @@ p {
         transform: translate(0, 0);
     }
 }
+@keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+    }
 
     </style>
 </head>
@@ -103,7 +109,7 @@ p {
     <div class="bg"></div>
     <div class="content">
         <div class="content-box">
-            <img src="imgs/logi 1.png" alt="Image">
+            <img src="imgs/logo.png" alt="Image">
             <h1>Great Things Are Just Around the Corner!</h1>
             <p>Our website is under construction, but we’re almost ready 
                 to launch. Don’t miss out!</p>
